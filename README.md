@@ -1,12 +1,15 @@
 # Capos
 
-Este ejercicio busca ser una primer aproximación al mundo de las colecciones.
+Este ejercicio busca ser una primer 
+aproximación al mundo de las colecciones.
 
 
 ## Rolando
 
 
-Se trata de un juego en el cual nuestro personaje, Rolando, va recolectando distintos artefactos por el mundo.
+Se trata de un juego en el cual nuestro personaje, 
+Rolando, va recolectando distintos artefactos 
+por el mundo.
 Para la primera versión, existen 4 artefactos:
 
 - Espada del destino
@@ -14,8 +17,9 @@ Para la primera versión, existen 4 artefactos:
 - Collar divino
 - Armadura de acero valyrio
 
-Al principio Rolando solo puede llevar hasta 2 artefactos a la vez, 
-pero se espera que a medida que se desarrolla el juego pueda incrementar 
+Al principio Rolando solo puede llevar hasta 2 
+artefactos a la vez, pero se espera que a medida 
+que se desarrolla el juego pueda incrementar 
 su capacidad.
 
 Cada vez que rolando se encuentra con un artefacto, y tiene capacidad para llevarlo, lo levanta. 
@@ -27,8 +31,8 @@ Cada vez que rolando se encuentra con un artefacto, y tiene capacidad para lleva
 
 ## Castillo de piedra
 
-El castillo de piedra es donde Rolando vive. Es tan grande que allí no hay límite 
-para almacenar artefactos.
+El castillo de piedra es donde Rolando vive.
+ Es tan grande que allí no hay límite para almacenar artefactos.
 Cuando rolando llega al castillo de piedra guarda en él todos los artefactos que lleva encima, 
 liberando espacio para poder levantar nuevos. 
 
