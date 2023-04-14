@@ -5,6 +5,7 @@ Este ejercicio busca ser una primer aproximación al mundo de las colecciones.
 
 ## Rolando
 
+
 Se trata de un juego en el cual nuestro personaje, Rolando, va recolectando distintos artefactos por el mundo.
 Para la primera versión, existen 4 artefactos:
 
