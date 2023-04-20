@@ -1,6 +1,6 @@
 import objects.*
 
-test "agarrar" {
+test "Rolando encuentra 3 cosas, pero solo tiene capacidad para 2." {
 	
 	rolando.encontrar(espada)
 	assert.that(rolando.tiene(espada))
@@ -12,6 +12,7 @@ test "agarrar" {
 	assert.that(rolando.tiene(libro))
 	assert.notThat(rolando.tiene(collar))
 
+	// este elemento no lo puede agarrar
 	rolando.encontrar(collar)
 	assert.that(rolando.tiene(espada))
 	assert.that(rolando.tiene(libro))
@@ -19,7 +20,7 @@ test "agarrar" {
 	
 }
 
-test "llegar al castillo" {
+test "Rolando deja las cosas que encontró en la casa y puede agarrar una tercera cosa." {
 	rolando.encontrar(espada)
 	rolando.encontrar(libro)	
 	rolando.irACasa()
@@ -30,7 +31,7 @@ test "llegar al castillo" {
 	
 }
 
-test "posee" {
+test "Rolando tiene una espada, un collar y una armadura de acero valyrio. No posee el libro." {
 	
 	rolando.encontrar(espada)
 	rolando.encontrar(collar)	
@@ -41,11 +42,9 @@ test "posee" {
 	assert.that(rolando.posee(collar))
 	assert.that(rolando.posee(armadura))
 	assert.notThat(rolando.posee(libro))
-	
-	//assert.equals(#{espada, collar, armadura}, rolando.poseciones())
 }
 
-test "historial" {
+test "Historial. Las cosas se guardan en órden." {
 	rolando.encontrar(espada)
 	rolando.encontrar(libro)	
 	rolando.encontrar(collar)	
@@ -54,6 +53,6 @@ test "historial" {
 	rolando.encontrar(collar)
 	
 	assert.equals([espada, libro, collar, armadura, collar], rolando.historial())	
-	
-	
 }
+
+
