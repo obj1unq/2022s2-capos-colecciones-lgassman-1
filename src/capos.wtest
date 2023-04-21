@@ -1,0 +1,58 @@
+import objects.*
+
+test "Rolando encuentra 3 cosas, pero solo tiene capacidad para 2." {
+	
+	rolando.encontrar(espada)
+	assert.that(rolando.tiene(espada))
+	assert.notThat(rolando.tiene(collar))
+	assert.notThat(rolando.tiene(libro))
+
+	rolando.encontrar(libro)
+	assert.that(rolando.tiene(espada))
+	assert.that(rolando.tiene(libro))
+	assert.notThat(rolando.tiene(collar))
+
+	// este elemento no lo puede agarrar
+	rolando.encontrar(collar)
+	assert.that(rolando.tiene(espada))
+	assert.that(rolando.tiene(libro))
+	assert.notThat(rolando.tiene(collar))
+	
+}
+
+test "Rolando deja las cosas que encontró en la casa y puede agarrar una tercera cosa." {
+	rolando.encontrar(espada)
+	rolando.encontrar(libro)	
+	rolando.irACasa()
+	rolando.encontrar(collar)
+	rolando.irACasa()
+	assert.equals(#{espada, libro, collar}, castillo.almacen())
+	assert.that(rolando.mochila().isEmpty())
+	
+}
+
+test "Rolando tiene una espada, un collar y una armadura de acero valyrio. No posee el libro." {
+	
+	rolando.encontrar(espada)
+	rolando.encontrar(collar)	
+	rolando.irACasa()
+	rolando.encontrar(armadura)	
+	
+	assert.that(rolando.posee(espada))
+	assert.that(rolando.posee(collar))
+	assert.that(rolando.posee(armadura))
+	assert.notThat(rolando.posee(libro))
+}
+
+test "Historial. Las cosas se guardan en órden." {
+	rolando.encontrar(espada)
+	rolando.encontrar(libro)	
+	rolando.encontrar(collar)	
+	rolando.irACasa()
+	rolando.encontrar(armadura)	
+	rolando.encontrar(collar)
+	
+	assert.equals([espada, libro, collar, armadura, collar], rolando.historial())	
+}
+
+

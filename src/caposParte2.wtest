@@ -1,0 +1,21 @@
+import objects.*
+
+test "Rolando arranca con 5 de poder Base. 3 de capacidad. Espada 5, Armadura 6, collar 3. Rolando tiene poder=19" {
+	// configuramos rolando
+	rolando.poderBase(5)
+	rolando.capacidad(4)
+	// llenamos la mochila
+	rolando.encontrar(espada)
+	rolando.encontrar(armadura)
+	rolando.encontrar(collar)
+	assert.equals(19, rolando.poderDePelea())
+}
+
+test "Rolando lucha, tiene solo la espada y luego la espada tiene la mitad del poder" {
+	rolando.poderBase(5)
+	rolando.encontrar(espada)
+	assert.equals(5, espada.poderQueAporta(rolando))
+	rolando.luchar()
+	assert.equals(6, rolando.poderBase())
+	assert.equals(3, espada.poderQueAporta(rolando))
+}
